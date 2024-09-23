@@ -96,9 +96,9 @@ export class News extends Component {
             <h2 className='text-center' style={{margin: '35px 0px'}}>News - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h2>
             {this.state.loading && <Spinner />}
             <div className="row">
-            {!this.state.loading && this.state.articles.map((element, index) => {
+            {!this.state.loading && this.state.articles.map((element) => {
                 return (
-                    <div className="col-md-4" key={element.url ? element.url + index : index}>
+                    <div className="col-md-4" key={element.url}>
                         <NewsItem 
                             title={element.title ? element.title.slice(0, 60) : ""} 
                             source={element.source.name}
